@@ -1,13 +1,33 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <router-view v-if="isRouteAlive"></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  provide(){
+    return {
+      reload: this.reload
+    }
+  },
+  data(){
+    return {
+      isRouteAlive: true
+    }
+  },
+  methods:{
+    reload(){
+      this.isRouteAlive = false;
+      this.$nextTick(function(){
+        this.isRouteAlive = true
+      })
+    }
+  },
+  components:{
+
+  }
 }
 </script>
 
@@ -19,5 +39,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body{
+  color: #e65d6e;
 }
 </style>
