@@ -1,17 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Base from '@/pages/base.vue'
+import Login from '@/pages/login.vue'
 
 Vue.use(Router)
-
-const Base = resolve >= require(['@/pages/base.vue'], resolve)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'base',
-      component: Base
+      component: Base,
+      children: [
+        {
+          path: '/login',
+          name: 'login_url',
+          component: Login
+        }
+      ]
     }
   ]
 })

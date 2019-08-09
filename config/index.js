@@ -22,7 +22,7 @@ module.exports = {
       env: require('./dev.env'),
       port: 8080,
       host: '0.0.0.0',
-      autoOpenBrowser: true,
+      autoOpenBrowser: false,
       assetsSubDirectory: 'static',
       assetsPublicPath: '/',
       staticPath:'/static/',

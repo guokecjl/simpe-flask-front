@@ -1,1 +1,25 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>426后台登录</title><script src=https://static.geetest.com/static/tools/gt.js></script><link href=https://front.geetest.com/logo/logo.ico rel="shortcut icon"><link href=/static/css/app.30790115300ab27614ce176899523b62.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.79d2fead2e2074804bd9.js></script><script type=text/javascript src=/static/js/vendor.845372c9bcf86a9fbbe0.js></script><script type=text/javascript src=/static/js/app.b22ce679862c47a75225.js></script></body></html>
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>426后台登录</title><script src=https://static.geetest.com/static/tools/gt.js></script><link href=https://front.geetest.com/logo/logo.ico rel="shortcut icon"><style>#testIE {
+          width: 100%;
+          display: none;
+          height: 40px;
+          line-height: 40px;
+          color: white;
+          text-align: center;
+          background: #082155;
+          opacity: .8;
+          font-size: 14px;
+        }</style><link href=/static/css/app.a2bbb5fdd0025b1a854181e41fcb5e88.css rel=stylesheet></head><body><div id=testIE>浏览器版本较低可能会影响页面展示效果，建议使用Chrome或者更高版本的浏览器</div><div id=app></div><script>function IEVersion() {
+              var TestIE = document.getElementById('testIE');
+              var userAgent = navigator.userAgent;
+              var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+              var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+              if(isIE || isIE11) {
+                  TestIE.style.display = 'inline-block';
+                  return 1
+              }
+              else{
+                  TestIE.style.display = 'none';
+                  return -1;//不是ie浏览器
+              }
+          }
+          IEVersion()</script><script type=text/javascript src=/static/js/manifest.79d2fead2e2074804bd9.js></script><script type=text/javascript src=/static/js/vendor.e8b4ce1106b7297d25aa.js></script><script type=text/javascript src=/static/js/app.67768e7c9b4a7cb4acb5.js></script></body></html>
