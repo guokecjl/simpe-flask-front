@@ -1,4 +1,4 @@
-import share from 'api/share'
+import share from '../api/share'
 export function auth() {
     return share({
         url: '/api/auth',

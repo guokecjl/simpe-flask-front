@@ -14,7 +14,7 @@
           </div>
           <router-view></router-view>
         </div>
-        <p class="copyright">Copyright © 2019 XIDIAN</p>
+        <p class="copyright" v-on:click="reverseMessage">{{message}}</p>
       </div>
     </div>
   </div>
@@ -25,7 +25,12 @@
         name: 'Base',
         data() {
             return {
-                msg: 'Welcome to Your Vue.js App'
+                message: 'Copyright © 2019 XIDIAN'
+            }
+        },
+        methods: {
+            reverseMessage: function () {
+                this.message = this.message.split('').reverse().join('')
             }
         }
     }

@@ -1,22 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Base from '@/pages/base.vue'
-import Login from '@/pages/login.vue'
+Vue.use(Router);
 
-Vue.use(Router)
+const Base = resolve => require(['@/pages/base.vue'], resolve);
+const Login = resolve => require(['@/pages/login.vue'], resolve);
 
+const route = [
+  {
+    path: '/',
+    component: Base,
+    children: [
+      {
+        path: '/login',
+        name: 'login',
+        component: Login
+      }
+    ]
+  }
+]
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      component: Base,
-      children: [
-        {
-          path: '/login',
-          name: 'login_url',
-          component: Login
-        }
-      ]
-    }
-  ]
+    mode: 'history',
+    routes: route,
 })
