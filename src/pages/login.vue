@@ -27,7 +27,11 @@
                     'password': this.password
                 }
                 loginApi(post_data).then(res=>{
-                    console.log(res)
+                    if(res.data.status === 1){
+                      alert('用户'+this.user_name+'登录成功');
+                    }else{
+                      alert('登录失败');
+                    }
                 }, error => {
                     console.log(error)
                 })

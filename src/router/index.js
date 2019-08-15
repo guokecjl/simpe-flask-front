@@ -4,6 +4,7 @@ Vue.use(Router);
 
 const Base = resolve => require(['@/pages/base.vue'], resolve);
 const Login = resolve => require(['@/pages/login.vue'], resolve);
+const Register = resolve => require(['@/pages/register.vue'], resolve);
 
 const route = [
   {
@@ -14,6 +15,11 @@ const route = [
         path: '/login',
         name: 'login',
         component: Login
+      },
+      {
+        path: '/register',
+        name: 'register',
+        component: Register
       }
     ]
   }
