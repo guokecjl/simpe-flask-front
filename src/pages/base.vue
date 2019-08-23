@@ -49,6 +49,7 @@
     flex-direction: column;
   }
 
+
   .copyright {
     @left: 0px;
     position: fixed;

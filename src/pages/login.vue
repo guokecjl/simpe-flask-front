@@ -96,7 +96,7 @@
 		  width: 360px;
 		  padding: 8% 0 0;
       margin: auto;
-      margin-top: -130px;
+      margin-top: 30px;
 		}
 		.form {
 		  position: relative;

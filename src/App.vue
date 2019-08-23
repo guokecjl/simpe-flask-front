@@ -26,11 +26,10 @@ export default {
     }
   },
   components:{
-
   }
 }
 </script>
-
+  
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

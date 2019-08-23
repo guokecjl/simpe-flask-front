@@ -9,22 +9,15 @@ const Register = resolve => require(['@/pages/register.vue'], resolve);
 const route = [
   {
     path: '/',
-    component: Base,
-    children: [
-      {
-        path: '/login',
-        name: 'login',
-        component: Login
-      },
-      {
-        path: '/register',
-        name: 'register',
-        component: Register
-      }
-    ]
+    component: Login
+  },
+  {
+    path: '/register',
+    component: Register
   }
 ]
 export default new Router({
     mode: 'history',
     routes: route,
 })
+  
