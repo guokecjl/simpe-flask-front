@@ -1,17 +1,8 @@
 <template>
   <div>
     <div id="base">
-      <div class="side">
-      </div>
       <div class="content-outter">
         <div class="content">
-          <div class="lang-change">
-            <div class="lang-item">
-              <img src="../assets/img/flag-cn.png" alt="chinese"
-                   class="flag">
-              <span>简体中文</span>
-            </div>
-          </div>
           <router-view></router-view>
         </div>
         <p class="copyright" v-on:click="reverseMessage">{{message}}</p>
@@ -41,18 +32,6 @@
     width: 100%;
     position: relative;
   }
-
-  .side {
-    width: 420px;
-    display: inline-flex;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    z-index: 22;
-    background: #42b983;
-    left: 0px;
-  }
-
   .content-outter {
     width: 100%;
     height: 100%;
@@ -60,7 +39,6 @@
   }
 
   .content {
-    padding-left: 420px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -71,34 +49,8 @@
     flex-direction: column;
   }
 
-  .lang-change {
-    width: 100%;
-    text-align: right;
-    position: fixed;
-    top: 40px;
-    right: 32px;
-
-    .flag {
-      width: 20px;
-      vertical-align: middle;
-      margin-right: 14px;
-    }
-
-    .lang-item {
-      height: 34px;
-      line-height: 34px;
-      padding: 0 8px;
-      cursor: pointer;
-
-      &:hover {
-        background: #EDF1F8;
-        border-radius: 3px;
-      }
-    }
-  }
-
   .copyright {
-    @left: 420px;
+    @left: 0px;
     position: fixed;
     left: @left;
     bottom: 22px;
