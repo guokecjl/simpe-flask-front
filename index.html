@@ -2,45 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>426后台登录</title>
-    <script src="https://static.geetest.com/static/tools/gt.js"></script>
-    <link href="https://front.geetest.com/logo/logo.ico" rel="shortcut icon">
-    <style>
-        #testIE {
-          width: 100%;
-          display: none;
-          height: 40px;
-          line-height: 40px;
-          color: white;
-          text-align: center;
-          background: #082155;
-          opacity: .8;
-          font-size: 14px;
-        }
-    </style>
+    <title>back-manage</title>
   </head>
   <body>
-      <div id="testIE">
-          浏览器版本较低可能会影响页面展示效果，建议使用Chrome或者更高版本的浏览器
-      </div>
-      <div id="app"></div>
-      <script>
-          function IEVersion() {
-              var TestIE = document.getElementById('testIE');
-              var userAgent = navigator.userAgent;
-              var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
-              var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
-              if(isIE || isIE11) {
-                  TestIE.style.display = 'inline-block';
-                  return 1
-              }
-              else{
-                  TestIE.style.display = 'none';
-                  return -1;//不是ie浏览器
-              }
-          }
-          IEVersion()
-      </script>      
+    <div id="app"></div>
   </body>
 </html>

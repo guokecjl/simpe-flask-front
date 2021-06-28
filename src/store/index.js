@@ -1,38 +1,38 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import Cookies from 'js-cookie'
-import {loginApi} from 'api/login'
-
+import {getAdminInfo} from '@/api/getData'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
-    modules: {},
-    state: {
-        email: Cookies.get('auth_email'),
-        GtLang: Cookies.get('language')
-    },
-    getters: {
-        email: state => state.email
-    },
-    mutations: {
-        setGtlang(state, data){
-            state.GtLang = data;
-        }
-    },
-    actions: {
-        Login({commit}, userInfo){
-            return new Promise((resolve, reject) =>{
-                loginApi(userInfo).then(
-                    res => {
-                        Cookies.set('auth_email', userInfo.email)
-                    }
-                ).catch(error=>{
-                    reject(error)
-                })
-            })
-        }
-    }
-})
+const state = {
+	adminInfo: {
+		avatar: 'default.jpg'
+	},
+}
 
-export default store
+const mutations = {
+	saveAdminInfo(state, adminInfo){
+		state.adminInfo = adminInfo;
+	}
+}
+
+const actions = {
+	async getAdminData({commit}){
+		try{
+			const res = await getAdminInfo()
+			if (res.status == 1) {
+				commit('saveAdminInfo', res.data);
+			}else{
+				throw new Error(res.type)
+			}
+		}catch(err){
+			// console.log(err.message)
+		}
+	}
+}
+
+export default new Vuex.Store({
+	state,
+	actions,
+	mutations,
+})

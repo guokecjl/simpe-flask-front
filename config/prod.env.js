@@ -1,6 +1,3 @@
-'use strict'
 module.exports = {
-  NODE_ENV: '"production"',
-  BASE_API: '"/"',
-  APP_ORIGIN: '""'
-};
+  NODE_ENV: '"production"'
+}

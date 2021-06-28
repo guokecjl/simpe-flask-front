@@ -1,23 +1,31 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-Vue.use(Router);
 
-const Base = resolve => require(['@/pages/base.vue'], resolve);
-const Login = resolve => require(['@/pages/login.vue'], resolve);
-const Register = resolve => require(['@/pages/register.vue'], resolve);
+Vue.use(Router)
 
-const route = [
-  {
-    path: '/',
-    component: Login
-  },
-  {
-    path: '/register',
-    component: Register
-  }
+const login = r => require.ensure([], () => r(require('@/page/login')), 'login');
+const manage = r => require.ensure([], () => r(require('@/page/manage')), 'manage');
+const userList = r => require.ensure([], () => r(require('@/page/userList')), 'userList');
+
+
+const routes = [
+	{
+		path: '/',
+		component: login
+	},
+	{
+		path: '/manage',
+		component: manage,
+		name: '',
+		children: [{
+			path: '/userList',
+			component: userList,
+			meta: ['数据管理', '用户列表'],
+		}]
+	}
 ]
+
 export default new Router({
-    mode: 'history',
-    routes: route,
+	routes,
+	strict: process.env.NODE_ENV !== 'production',
 })
-  
